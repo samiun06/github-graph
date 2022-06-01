@@ -1,0 +1,17 @@
+name: Push commit
+on:
+  schedule:
+     - cron:  '2 9 1 6 *'
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create report file
+        run: date +%s > report.txt
+      - name: Commit report
+        run: |
+          git config --global user.name 'Samiun Jahan'
+          git config --global user.email 'samiunjahan@users.noreply.github.com'
+          git commit -am "Automated report"
+          git push
