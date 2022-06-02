@@ -1,7 +1,7 @@
 name: Push commit
 on:
   schedule:
-     - cron:  '40 4 2 6 *'
+     - cron:  '0 5 2 6 *'
 jobs:
   report:
     runs-on: ubuntu-latest
